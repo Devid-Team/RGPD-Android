@@ -14,7 +14,17 @@ Ce pod est un framework, développé par Dev-id, permettant de gérer facilement
 
 ### Installation
 
-TODO
+* **Étape 1**
+
+Ajouter `maven { url 'https://jitpack.io' }` dans votre **project/build.gradle** à la fin des `repositories`
+
+![project](/statics/project.png)
+
+* **Étape 2**
+
+Ajouter `implementation 'com.github.Devid-Team:RGPD-Android:v1.0'` dans votre **project/app/build.gradle** dans les `dependencies`
+
+![project](/statics/library.png)
 
 ## Versions
 
