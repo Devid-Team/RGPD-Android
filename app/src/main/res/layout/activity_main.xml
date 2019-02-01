@@ -6,15 +6,4 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#FFFFFF"
-        tools:context=".MainActivity">
-
-    <a.rgpd.rgpd.utils.RGPDButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:backgroundTint="#000000"
-            android:drawableTint="#FF0000"/>
-
-</android.support.constraint.ConstraintLayout>
+        tools:context=".MainActivity"/>
