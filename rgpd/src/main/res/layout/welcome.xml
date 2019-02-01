@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+    <LinearLayout
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="6"
+                android:paddingTop="22dp"
+                android:paddingBottom="22dp"
+                android:paddingStart="32dp"
+                android:paddingEnd="32dp"
+                android:orientation="vertical">
+
+            <TextView
+                    android:id="@+id/title1"
+                    android:fontFamily="@font/bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/welcome_title1"
+                    android:textSize="50sp"/>
+
+            <TextView
+                    android:id="@+id/title2"
+                    android:fontFamily="@font/bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/welcome_title2"
+                    android:textSize="50sp"/>
+
+            <TextView
+                    android:id="@+id/description1"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/welcome_app_conform"
+                    android:textSize="16sp"/>
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                <ImageView
+                        android:id="@+id/icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/icon_private_life"
+                        android:layout_centerInParent="true"/>
+
+            </RelativeLayout>
+
+            <TextView
+                    android:id="@+id/description2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/regular"
+                    android:text="@string/welcome_description"
+                    android:textSize="16sp"/>
+
+        </LinearLayout>
+
+        <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.6dp"
+                android:background="@color/button_separator"/>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" >
+
+            <RelativeLayout
+                    android:id="@+id/validate_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:onClick="onClickOnNextButton"
+                    android:layout_centerInParent="true"
+                    tools:ignore="UselessParent">
+
+                <TextView
+                        android:id="@+id/validate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/next_button"
+                        android:fontFamily="@font/bold"
+                        android:textSize="16sp"
+                        android:layout_centerInParent="true"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

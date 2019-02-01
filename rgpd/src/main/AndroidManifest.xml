@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="a.rgpd.rgpd">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+            android:allowBackup="true"
+            android:label="@string/app_name"
+            android:supportsRtl="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+
+        <activity
+                android:name="a.rgpd.rgpd.activity.CGUActivity" />
+
+        <activity
+                android:name="a.rgpd.rgpd.activity.CGVActivity" />
+
+        <activity
+                android:name="a.rgpd.rgpd.activity.StatsActivity" />
+
+        <activity
+                android:name="a.rgpd.rgpd.activity.PersonalDataActivity" />
+
+        <activity
+                android:name="a.rgpd.rgpd.activity.CommActivity" />
+
+        <activity
+                android:name="a.rgpd.rgpd.activity.PaymentInfoActivity" />
+
+        <activity
+                android:name="a.rgpd.rgpd.activity.PreviewActivity" />
+
+    </application>
+
+</manifest>

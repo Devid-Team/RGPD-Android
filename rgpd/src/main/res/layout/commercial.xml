@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             android:background="@color/white">
+
+    <LinearLayout
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="6"
+                android:orientation="vertical"
+                android:paddingBottom="22dp"
+                android:paddingEnd="32dp"
+                android:paddingStart="32dp"
+                android:paddingTop="22dp">
+
+            <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5"
+                    android:src="@mipmap/icon_commercial"
+                    tools:ignore="ContentDescription" />
+
+            <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/commercial_title"
+                    android:textSize="30sp"
+                    android:fontFamily="@font/bold"/>
+
+            <TextView
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/regular"
+                    android:layout_marginTop="16dp"
+                    android:scrollbars="vertical"
+                    android:textSize="16sp" />
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:onClick="changeButtonState"
+                    android:layout_weight="0.12">
+
+                <ImageView
+                        android:id="@+id/checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/check_vide"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="10dp"/>
+
+                <TextView
+                        android:id="@+id/checkbox_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/default_accept"
+                        android:fontFamily="@font/regular"
+                        android:textSize="17sp"
+                        android:layout_gravity="center_vertical"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.6dp"
+                android:background="@color/button_separator" />
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp">
+
+            <RelativeLayout
+                    android:id="@+id/validate_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:onClick="onClickOnNextButton"
+                    android:background="@mipmap/rec_border"
+                    android:layout_centerInParent="true"
+                    tools:ignore="UselessParent">
+
+                <TextView
+                        android:id="@+id/validate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/continue_button"
+                        android:fontFamily="@font/bold"
+                        android:textSize="16sp"
+                        android:layout_centerInParent="true"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

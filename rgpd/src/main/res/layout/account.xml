@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+    <LinearLayout
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="6"
+                android:paddingBottom="22dp"
+                android:paddingEnd="32dp"
+                android:paddingStart="32dp"
+                android:paddingTop="22dp">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/account_title"
+                        android:textSize="30sp"
+                        android:fontFamily="@font/bold"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:orientation="vertical">
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="15dp"
+                            android:orientation="horizontal">
+
+                        <ImageView
+                                android:id="@+id/checkbox_comm"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/check_vide"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginEnd="14dp"/>
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                            <TextView
+                                    android:id="@+id/checkbox_comm_text"
+                                    android:fontFamily="@font/regular"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/account_comm"
+                                    android:textSize="16sp"/>
+
+                            <TextView
+                                    android:id="@+id/more_comm"
+                                    android:fontFamily="@font/regular"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/more"
+                                    android:textStyle="bold"
+                                    android:onClick="seeMore"
+                                    android:textSize="16sp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="15dp"
+                            android:orientation="horizontal">
+
+                        <ImageView
+                                android:id="@+id/checkbox_stats"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/check_vide"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginEnd="14dp"/>
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                            <TextView
+                                    android:id="@+id/checkbox_stats_text"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/account_stats"
+                                    android:textSize="16sp"/>
+
+                            <TextView
+                                    android:id="@+id/more_stats"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/more"
+                                    android:onClick="seeMore"
+                                    android:textStyle="bold"
+                                    android:textSize="16sp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="15dp"
+                            android:orientation="horizontal">
+
+                        <ImageView
+                                android:id="@+id/checkbox_personal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/check_vide"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginEnd="14dp"/>
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                            <TextView
+                                    android:id="@+id/checkbox_personal_text"
+                                    android:fontFamily="@font/regular"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/account_personal"
+                                    android:textSize="16sp"/>
+
+                            <TextView
+                                    android:id="@+id/more_personal"
+                                    android:fontFamily="@font/regular"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:onClick="seeMore"
+                                    android:text="@string/more"
+                                    android:textStyle="bold"
+                                    android:textSize="16sp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                        <ImageView
+                                android:id="@+id/checkbox_payment"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/check_vide"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginEnd="14dp"/>
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                            <TextView
+                                    android:id="@+id/checkbox_payment_text"
+                                    android:fontFamily="@font/regular"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/account_payment"
+                                    android:textSize="16sp"/>
+
+                            <TextView
+                                    android:id="@+id/more_payment"
+                                    android:fontFamily="@font/regular"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:onClick="seeMore"
+                                    android:text="@string/more"
+                                    android:textStyle="bold"
+                                    android:textSize="16sp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="30dp"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:id="@+id/cgu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="15dp"
+                            android:fontFamily="@font/regular"
+                            android:layout_gravity="center_horizontal"
+                            android:onClick="seeMore"
+                            android:text="@string/account_cgu"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/cgv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/regular"
+                            android:layout_gravity="center_horizontal"
+                            android:onClick="seeMore"
+                            android:text="@string/account_cgv"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <TextView
+                        android:id="@+id/description"
+                        android:layout_width="match_parent"
+                        android:fontFamily="@font/regular"
+                        android:layout_height="wrap_content"
+                        android:text="@string/account_description"
+                        android:textSize="16sp"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.6dp"
+                android:background="@color/button_separator" />
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp">
+
+            <RelativeLayout
+                    android:id="@+id/validate_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:onClick="onClickOnNextButton"
+                    android:layout_centerInParent="true"
+                    tools:ignore="UselessParent">
+
+                <TextView
+                        android:id="@+id/validate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/delete_account"
+                        android:fontFamily="@font/bold"
+                        android:textSize="16sp"
+                        android:layout_centerInParent="true"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

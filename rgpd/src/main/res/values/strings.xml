@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">RGPD</string>
+
+    <string name="welcome_title1">Gestion de la</string>
+    <string name="welcome_title2">Vie Privée</string>
+    <string name="cgv_title">Conditions générales de vente</string>
+    <string name="cgu_title">Conditions générales d\'utilisation</string>
+    <string name="commercial_title">Prospection Commerciale</string>
+    <string name="personal_data_title">Données Personnelles</string>
+    <string name="statistics_title">Statistiques</string>
+    <string name="payment_info_title">Informations Bancaires</string>
+    <string name="account_title">Gérer des données personnelles</string>
+
+    <string name="welcome_app_conform">Cette application est en conformité avec le Règlement Général sur la Protection des Données.</string>
+    <string name="welcome_description">Pour son bon fonctionnement, il nous est nécessaire d’accéder et/ou de stocker certaines de vos données personnelles.\n\nVous pouvez à tout moment demander la suppression intégrale de toutes les données vous concernant dans la rubrique « Gestion des données personnelles » de votre compte.</string>
+
+    <string name="default_accept">J\'accepte</string>
+    <string name="cgv_accept">J\'ai lu et j\'accepte les C.G.V</string>
+    <string name="cgu_accept">J\'ai lu et j\'accepte les C.G.U</string>
+
+    <string name="account_button">\ \ \ \ Gérer mes données personnelles</string>
+    <string name="continue_button">Continuer</string>
+    <string name="next_button">Suivant</string>
+    <string name="validate_button">Valider</string>
+    <string name="delete_account">Supprimer mon compte</string>
+
+    <string name="account_comm">J\’accepte la collecte d’informations personnelles à des fins de prospection commerciale.</string>
+    <string name="account_stats">J\’accepte la collecte d’informations personnelles à des fins d\'amélioration et de statistiques.</string>
+    <string name="account_personal">J\’accepte le stockage de mes données personnelles.</string>
+    <string name="account_payment">J\'accepte le stockage de mes données bancaires.</string>
+    <string name="account_cgu"><u>Conditions générales d\'utilisation</u></string>
+    <string name="account_cgv"><u>Conditions générales de vente</u></string>
+
+    <string name="account_description">Vous pouvez à tout moment supprimer votre compte. L’intégralité des données stockées sur nos serveurs sera supprimée.</string>
+
+    <string name="more">En savoir plus</string>
+
+</resources>
