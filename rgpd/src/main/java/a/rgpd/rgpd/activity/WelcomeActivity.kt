@@ -116,7 +116,6 @@ class WelcomeActivity: AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        println("LOL")
         if (RGPD.shared.pagesShown.count() == 0) {
             finish()
         }

@@ -61,32 +61,32 @@ class RGPD {
         semaphore.acquire()
         pagesAccepted = arrayListOf()
         Webservices.services.getConfig {
-            if (it == null) {
+            if (jsonObject.get("success") == false) {
                 return@getConfig
             }
             try {
-                if (it.get("config") != null) {
-                    texts = Gson().fromJson(it.get("config").toString(), pageTexts::class.java)
+                if (jsonObject.get("config") != null) {
+                    texts = Gson().fromJson(jsonObject.get("config").toString(), pageTexts::class.java)
                 }
-                isInit = it.get("success") == true && it.get("config") != null
+                isInit = jsonObject.get("success") == true && jsonObject.get("config") != null
 
             } catch (e: Exception) {
                 println("POD RGPD Error : " + e.message)
                 return@getConfig
             }
             Webservices.services.getUserAuthorizations {
-                if (it == null) {
+                if (jsonObject.get("success") == false) {
                     return@getUserAuthorizations
                 }
                 try {
-                    if (it.get("auth") != null) {
-                        authGiven = Gson().fromJson(it.get("auth").toString(), applicationAuthorization::class.java)
+                    if (jsonObject.get("auth") != null) {
+                        authGiven = Gson().fromJson(jsonObject.get("auth").toString(), applicationAuthorization::class.java)
                     }
                 } catch (e: Exception) {
                     println("POD RGPD Error: " + e.message)
                 }
-                semaphore.release()
-            }
+             semaphore.release()
+           }
         }
     }
 

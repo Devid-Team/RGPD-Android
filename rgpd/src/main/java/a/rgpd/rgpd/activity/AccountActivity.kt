@@ -10,6 +10,8 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.*
 import co.revely.gradient.RevelyGradient
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
 import java.lang.Exception
 
 class AccountActivity : AppCompatActivity() {
@@ -279,16 +281,18 @@ class AccountActivity : AppCompatActivity() {
         alert.setTitle("Attention !")
         alert.setMessage("Vous êtes sur le point de supprimer votre compte. Êtes-vous sûr ?")
         alert.setPositiveButton("Oui") {dialog, which ->
-            Webservices.services.deleteAuth {
-                if (it == null) {
-                    return@deleteAuth
-                }
-                try {
-                    println("RGPD POD Return from updateUserWebservice : " + it.toString())
-                    RGPD.shared.completionHandler(true)
-                    finish()
-                } catch (e: Exception) {
-                    println("POD RGPD Error : " + e.message)
+            GlobalScope.async {
+                Webservices.services.deleteAuth {
+                    if (jsonObject.get("success") == false) {
+                        return@deleteAuth
+                    }
+                    try {
+                        println("RGPD POD Return from updateUserWebservice : $jsonObject")
+                        RGPD.shared.completionHandler(true)
+                        finish()
+                    } catch (e: Exception) {
+                        println("POD RGPD Error : " + e.message)
+                    }
                 }
             }
         }

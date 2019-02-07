@@ -38,7 +38,7 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.0'
     implementation 'co.revely:gradient:1.0.1'
     implementation 'com.beust:klaxon:5.0.1'
-    implementation 'com.github.jkcclemens:khttp:master-SNAPSHOT'
+    implementation 'com.github.jkcclemens:khttp:0.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'

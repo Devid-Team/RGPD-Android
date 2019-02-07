@@ -10,6 +10,8 @@ import android.text.method.ScrollingMovementMethod
 import android.view.View
 import android.widget.*
 import co.revely.gradient.RevelyGradient
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
 
 class PersonalDataActivity: AppCompatActivity() {
 
@@ -165,12 +167,14 @@ class PersonalDataActivity: AppCompatActivity() {
 
             auth += "]"
 
-            Webservices.services.updateUserAuthorizations(auth) {
-                finish()
-                if (it == null) {
-                    return@updateUserAuthorizations
-                } else {
-                    println("RGPD POD Return from updateUserWebservice : " + it.toString())
+            GlobalScope.async {
+                Webservices.services.updateUserAuthorizations(auth) {
+                    finish()
+                    if (jsonObject.get("success") == false) {
+                        return@updateUserAuthorizations
+                    } else {
+                        println("RGPD POD Return from updateUserWebservice : $jsonObject")
+                    }
                 }
             }
         } else {
