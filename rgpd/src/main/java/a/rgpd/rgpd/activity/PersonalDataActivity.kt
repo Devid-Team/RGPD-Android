@@ -12,6 +12,7 @@ import android.widget.*
 import co.revely.gradient.RevelyGradient
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
+import org.json.JSONObject
 
 class PersonalDataActivity: AppCompatActivity() {
 
@@ -169,7 +170,13 @@ class PersonalDataActivity: AppCompatActivity() {
 
             GlobalScope.async {
                 Webservices.services.updateUserAuthorizations(auth) {
+                    val (bytes, error) = it
+                    if (bytes == null || error != null)
+                        return@updateUserAuthorizations
+
                     finish()
+
+                    val jsonObject = JSONObject(String(bytes))
                     if (jsonObject.get("success") == false) {
                         return@updateUserAuthorizations
                     } else {

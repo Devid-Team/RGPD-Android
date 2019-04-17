@@ -12,6 +12,7 @@ import android.widget.*
 import co.revely.gradient.RevelyGradient
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
+import org.json.JSONObject
 import java.lang.Exception
 
 class AccountActivity : AppCompatActivity() {
@@ -46,6 +47,12 @@ class AccountActivity : AppCompatActivity() {
         for (item in RGPD.shared.theme!!.pages) {
             if (item.pageName == "account") {
                 theme = item
+            }
+        }
+
+        if (RGPD.shared.authGiven != null) {
+            RGPD.shared.authGiven!!.keyAccepted.forEach {
+                println(it)
             }
         }
 
@@ -283,13 +290,18 @@ class AccountActivity : AppCompatActivity() {
         alert.setPositiveButton("Oui") {dialog, which ->
             GlobalScope.async {
                 Webservices.services.deleteAuth {
+                    val (bytes, error) = it
+                    if (bytes == null || error != null)
+                        return@deleteAuth
+
+                    val jsonObject = JSONObject(String(bytes))
                     if (jsonObject.get("success") == false) {
                         return@deleteAuth
                     }
                     try {
                         println("RGPD POD Return from updateUserWebservice : $jsonObject")
-                        RGPD.shared.completionHandler(true)
                         finish()
+                        RGPD.shared.completionHandler(true)
                     } catch (e: Exception) {
                         println("POD RGPD Error : " + e.message)
                     }

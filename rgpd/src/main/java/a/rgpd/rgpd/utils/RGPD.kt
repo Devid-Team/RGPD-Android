@@ -3,10 +3,13 @@ package a.rgpd.rgpd.utils
 import a.rgpd.rgpd.activity.*
 import android.content.Context
 import android.content.Intent
+import com.beust.klaxon.Json
 import com.beust.klaxon.Klaxon
 import com.google.gson.Gson
+import com.google.gson.JsonObject
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
+import org.json.JSONObject
 import java.util.ArrayList
 import java.util.concurrent.Semaphore
 
@@ -61,13 +64,18 @@ class RGPD {
         semaphore.acquire()
         pagesAccepted = arrayListOf()
         Webservices.services.getConfig {
-            if (jsonObject.get("success") == false) {
+            val (bytes, error) = it
+            if (bytes == null || error != null)
                 return@getConfig
-            }
+
+            val jsonObject = JSONObject(String(bytes))
+            if (jsonObject.get("success") == false)
+                return@getConfig
+
             try {
-                if (jsonObject.get("config") != null) {
+                if (jsonObject.get("config") != null)
                     texts = Gson().fromJson(jsonObject.get("config").toString(), pageTexts::class.java)
-                }
+
                 isInit = jsonObject.get("success") == true && jsonObject.get("config") != null
 
             } catch (e: Exception) {
@@ -75,14 +83,19 @@ class RGPD {
                 return@getConfig
             }
             Webservices.services.getUserAuthorizations {
-                if (jsonObject.get("success") == false) {
+                val (bytes2, error2) = it
+                if (bytes2 == null || error2 != null)
                     return@getUserAuthorizations
-                }
+
+                val jsonObject2 = JSONObject(String(bytes2))
+                if (jsonObject2.get("success") == false)
+                    return@getUserAuthorizations
+
                 try {
-                    if (jsonObject.get("auth") != null) {
-                        authGiven = Gson().fromJson(jsonObject.get("auth").toString(), applicationAuthorization::class.java)
-                    }
-                } catch (e: Exception) {
+                    println(jsonObject2)
+                    if (jsonObject2.get("auth") != null)
+                        authGiven = Gson().fromJson(jsonObject2.get("auth").toString(), applicationAuthorization::class.java)
+                 } catch (e: Exception) {
                     println("POD RGPD Error: " + e.message)
                 }
              semaphore.release()

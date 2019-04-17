@@ -12,6 +12,7 @@ import android.widget.*
 import co.revely.gradient.RevelyGradient
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
+import org.json.JSONObject
 
 class CGVActivity: AppCompatActivity() {
 
@@ -161,8 +162,14 @@ class CGVActivity: AppCompatActivity() {
 
             GlobalScope.async {
                 Webservices.services.updateUserAuthorizations(auth) {
+                    val (bytes, error) = it
+                    if (bytes == null || error != null)
+                        return@updateUserAuthorizations
+
                     finish()
-                    if (jsonObject.get("success") == null) {
+
+                    val jsonObject = JSONObject(String(bytes))
+                    if (jsonObject.get("success") == false) {
                         return@updateUserAuthorizations
                     } else {
                         println("RGPD POD Return from updateUserWebservice : $jsonObject")

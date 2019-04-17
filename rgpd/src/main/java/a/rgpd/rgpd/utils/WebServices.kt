@@ -1,8 +1,8 @@
 package a.rgpd.rgpd.utils
 
-import khttp.responses.Response
-import org.json.JSONObject
-import kotlin.concurrent.thread
+import com.github.kittinunf.fuel.Fuel
+import com.github.kittinunf.fuel.core.FuelError
+import com.github.kittinunf.result.Result
 
 class Webservices {
 
@@ -10,31 +10,43 @@ class Webservices {
         val services = Webservices()
     }
 
-    fun getUserAuthorizations(completion: Response.() -> Unit) {
+    fun getUserAuthorizations(completion: (Result<ByteArray, FuelError>) -> Unit) {
         val url = Config.instance.baseURL + Config.instance.userAuthorizationURL
-        val data = mapOf("bundleId" to RGPD.shared.applicationBundleId!!, "phoneId" to RGPD.shared.phoneId!!)
+        val data = listOf("bundleId" to RGPD.shared.applicationBundleId!!, "phoneId" to RGPD.shared.phoneId!!)
 
-        completion(khttp.request("GET", url, mapOf(), data))
+        Fuel.get(url, data)
+            .response { result ->
+                completion(result)
+            }
     }
 
-    fun getConfig(completion: Response.() -> Unit) {
+    fun getConfig(completion: (Result<ByteArray, FuelError>) -> Unit) {
         val url = Config.instance.baseURL + Config.instance.appliConfigURL
-        val data = mapOf("bundleId" to RGPD.shared.applicationBundleId!!)
+        val data = listOf("bundleId" to RGPD.shared.applicationBundleId!!)
 
-        completion(khttp.request("GET", url, mapOf(), data))
+        Fuel.get(url, data)
+            .response { result ->
+                completion(result)
+            }
     }
 
-    fun updateUserAuthorizations(authKeyString: String, completion: Response.() -> Unit) {
+    fun updateUserAuthorizations(authKeyString: String, completion: (Result<ByteArray, FuelError>) -> Unit) {
         val url = Config.instance.baseURL + Config.instance.userAuthorizationURL
-        val data = mapOf("bundleId" to RGPD.shared.applicationBundleId!!, "phoneId" to RGPD.shared.phoneId!!, "auth" to authKeyString)
+        val data = listOf("bundleId" to RGPD.shared.applicationBundleId!!, "phoneId" to RGPD.shared.phoneId!!, "auth" to authKeyString)
 
-        completion(khttp.request("POST", url, mapOf(), mapOf(), data))
+        Fuel.post(url, data)
+            .response { result ->
+                completion(result)
+            }
     }
 
-    fun deleteAuth(completion: Response.() -> Unit) {
+    fun deleteAuth(completion: (Result<ByteArray, FuelError>) -> Unit) {
         val url = Config.instance.baseURL + Config.instance.deleteAuthURL
-        val data = mapOf("bundleId" to RGPD.shared.applicationBundleId!!, "phoneId" to RGPD.shared.phoneId!!)
+        val data = listOf("bundleId" to RGPD.shared.applicationBundleId!!, "phoneId" to RGPD.shared.phoneId!!)
 
-        completion(khttp.request("POST", url, mapOf(), mapOf(), data))
+        Fuel.post(url, data)
+            .response { result ->
+                completion(result)
+            }
     }
 }
