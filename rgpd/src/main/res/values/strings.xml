@@ -22,7 +22,7 @@
     <string name="continue_button">Continuer</string>
     <string name="next_button">Suivant</string>
     <string name="validate_button">Valider</string>
-    <string name="delete_account">Supprimer mon compte</string>
+    <string name="delete_account">Supprimer mes données</string>
 
     <string name="account_comm">J\’accepte la collecte d’informations personnelles à des fins de prospection commerciale.</string>
     <string name="account_stats">J\’accepte la collecte d’informations personnelles à des fins d\'amélioration et de statistiques.</string>
