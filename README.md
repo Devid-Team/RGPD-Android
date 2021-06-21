@@ -22,7 +22,7 @@ Ajouter `maven { url 'https://jitpack.io' }` dans votre **project/build.gradle**
 
 * **Étape 2**
 
-Ajouter `implementation 'com.github.Devid-Team:RGPD-Android:1.3.2'` dans votre **project/app/build.gradle** dans les `dependencies`
+Ajouter `implementation 'com.github.Devid-Team:RGPD-Android:1.3.4'` dans votre **project/app/build.gradle** dans les `dependencies`
 
 ![project](/statics/library.png)
 
