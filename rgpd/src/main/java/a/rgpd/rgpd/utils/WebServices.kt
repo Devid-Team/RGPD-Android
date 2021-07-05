@@ -3,6 +3,7 @@ package a.rgpd.rgpd.utils
 import com.github.kittinunf.fuel.Fuel
 import com.github.kittinunf.fuel.core.FuelError
 import com.github.kittinunf.result.Result
+import java.util.*
 
 class Webservices {
 
@@ -22,7 +23,7 @@ class Webservices {
 
     fun getConfig(completion: (Result<ByteArray, FuelError>) -> Unit) {
         val url = Config.instance.baseURL + Config.instance.appliConfigURL
-        val data = listOf("bundleId" to RGPD.shared.applicationBundleId!!)
+        val data = listOf("bundleId" to RGPD.shared.applicationBundleId!!, "language" to Locale.getDefault().displayLanguage)
 
         Fuel.get(url, data)
             .response { result ->

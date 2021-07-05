@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">RGPD</string>
+
+    <string name="welcome_title1">Privacy</string>
+    <string name="welcome_title2">Management</string>
+    <string name="cgv_title">Terms of Sales</string>
+    <string name="commercial_title">Business development</string>
+    <string name="cgu_title">Terms of Service</string>
+    <string name="personal_data_title">Personal data</string>
+    <string name="statistics_title">Statistics</string>
+    <string name="payment_info_title">Banking information</string>
+    <string name="account_title">Management of personal data</string>
+
+    <string name="welcome_app_conform">This application complies with the General Data Protection Regulation..</string>
+    <string name="welcome_description">For its proper functioning, we need to access and / or store some of your personal data. You may at any time request the complete deletion of all data concerning you in the \"Management of personal data\" section of your account.</string>
+
+    <string name="default_accept">Validate</string>
+    <string name="cgv_accept">I have read and accept the Terms of Sales</string>
+    <string name="cgu_accept">I have read and accept the Terms of Service</string>
+
+    <string name="account_button">\ \ \ \ Management of personal data</string>
+    <string name="continue_button">Continue</string>
+    <string name="next_button">Next</string>
+    <string name="validate_button">Validate</string>
+    <string name="delete_account">Delete my account</string>
+
+    <string name="account_comm">I accept the collection of personal information for commercial prospecting purposes.</string>
+    <string name="account_stats">I accept the collection of personal information for improvement and statistics purposes.</string>
+    <string name="account_personal">I accept the storage of my personal data.</string>
+    <string name="account_payment">I accept the storage of my banking data.</string>
+    <string name="account_cgu"><u>Terms of Service</u></string>
+    <string name="account_cgv"><u>Terms of Sales</u></string>
+
+    <string name="account_description">You can delete your account at any time. All data stored on our servers will be deleted.</string>
+
+    <string name="more">See more</string>
+
+</resources>
